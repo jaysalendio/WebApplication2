@@ -1,0 +1,70 @@
+﻿
+@{
+
+    ViewBag.Title = "Showusers";
+    
+
+    var userList = (IEnumerable<WebApplication2.Models.user>)ViewData["UserList"];
+}
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Activity Name</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>OOTD</th>
+            <th>Remarks</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @{
+            foreach (var item in userList)
+            {
+                <tr>
+                    <td></td>
+                    <td>
+                        @item.first_name
+                    </td>
+                    <td>
+                        @item.last_name
+                    </td>
+                    <td>
+                        @item.email
+                    </td>
+                    <td>
+                        @item.password
+                    </td>
+                    
+                    <td>
+                        <form action="Userupdate" method="post">
+                            <input type="hidden" value="@item.user_id" />
+                            <button class="editActivityBtn btn btn-primary"
+                                    >
+                                Edit
+                            </button>
+                        </form>
+                        <button id="<?php echo $activity['id'] ?>" class="deleteBtn btn btn-danger"
+                                data-bs-toggle="modal" data-bs-target="#deleteModal">
+                            Delete
+                        </button>
+                    </td>
+
+
+                </tr>
+                }
+            }
+
+            </tbody>
+</table>
+
+
+
+

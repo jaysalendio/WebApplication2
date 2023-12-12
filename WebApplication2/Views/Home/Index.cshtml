@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!-- Modal -->
+<div id="formContainer" class="modal" style="display: none">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <div id="login_form">
+            <header>Login</header>
+
+            <form action="AddUserToDatabase" method="POST">
+                <div class="field input-field">
+                    <input type="email" name="email" placeholder="Email" class="input" required />
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" name="password" placeholder="Password" class="password" required />
+                    <i class="bx bx-hide eye-icon pw_hide"></i>
+                </div>
+
+                <div class="form-link check_cont">
+                    <span class="checkbox">
+                        <input type="checkbox" id="check" />
+                        <label for="check">Remember Me</label>
+                    </span>
+                    <a href="#" class="forgot-pass">Forgot password?</a>
+                </div>
+
+                <div class="field button-field">
+                    <input class="sub" type="submit" name="login" value="Login" />
+                </div>
+
+                <div class="form-link">
+                    <span>
+                        Don't have an account?
+                        <span id="signup_button" class="a">Signup</span>
+                    </span>
+                </div>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+
+        <div id="signup_form" style="display: none; border-bottom: 2px solid #f1f1f1;">
+            <header>Signup</header>
+
+            <form action="AddUserToDatabase" method="POST" style="height: 420px; overflow: auto; padding: 20px">
+                <div class="field input-field">
+                    <input type="text" name="firstname" placeholder="First Name" class="input" required />
+                </div>
+
+                <div class="field input-field">
+                    <input type="text" name="lastname" placeholder="Last Name" class="input" required />
+                </div>
+
+              
+
+                <div class="field input-field">
+                    <input type="text" name="address" placeholder="Address" class="input" required />
+                </div>
+
+                <div class="field input-field">
+                    <input type="email" name="email" placeholder="Email" class="input" required />
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" name="password" placeholder="Create password" class="password" required />
+                    <i class="bx bx-hide eye-icon pw_hide"></i>
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" name="confirm-password" placeholder="Confirm password" class="password" required />
+                    <i class="bx bx-hide eye-icon pw_hide"></i>
+                </div>
+
+                <div class="field button-field">
+                    <input class="sub" type="submit" id="registerBtn" name="submit" value="Register" />
+                </div>
+
+                <div class="form-link">
+                    <span>
+                        Already have an account?
+                        <span id="login_button" class="a">Login</span>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
